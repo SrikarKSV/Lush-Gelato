@@ -10,7 +10,8 @@
   --main-font: "Poppins", sans-serif;
   --logo-font: "Abril Fatface", cursive;
   --hero-logo-font: "Herr Von Muellerhoff", cursive;
-  --heading-font: "Herr Von Muellerhoff", cursive;
+  --heading-font: "Montserrat", sans-serif;
+  --tagline-font: "Sanchez", serif;
   --main-background-left-color: #332379;
   --main-background-right-color: #5b42ab;
   --yellow: #ffc600;
@@ -18,4 +19,163 @@
   --pink: #f654ae;
   --red: #ff0000;
   --light-red: #eb2f64;
+  --white: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-font);
+  background: linear-gradient(
+    to right,
+    var(--main-background-left-color),
+    var(--main-background-right-color)
+  );
+}
+
+/************************************** Navbar ***********************************/
+
+header {
+  display: flex;
+  height: 6rem;
+  flex-wrap: wrap;
+}
+
+#hero {
+  background: url(../img/hero-bg.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#logo {
+  flex: 1;
+  margin: 0.7rem 5.2rem;
+}
+
+.logo__link {
+  width: 2rem;
+  font-family: var(--logo-font);
+  color: var(--yellow);
+  font-size: 3.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  height: 100%;
+}
+
+.nav__item {
+  margin: 1.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+.nav__item--underline {
+  border-bottom: 3px solid var(--white);
+}
+
+/************************************** End Navbar ***********************************/
+
+/************************************** Hero banner ***********************************/
+#hero-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 6rem);
+  flex-direction: column;
+}
+
+.hero-text__heading {
+  margin-top: -8rem;
+  font-family: var(--hero-logo-font);
+  color: var(--yellow);
+  font-size: 8rem;
+  font-weight: normal;
+  text-shadow: 3px 3px 4px #000000;
+}
+.hero-text__tagline {
+  margin-top: -2rem;
+  font-size: 1.6rem;
+  width: 50vw;
+  color: var(--white);
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: var(--tagline-font);
+}
+
+/************************************** End Hero banner ***********************************/
+
+#limited-time {
+  max-width: 80vw;
+  margin: 3rem auto;
+  background: url(../img/grit.0f8155d3.png) 1700px,
+    url(../img/grit.0f8155d3.png) 1700px, var(--dark-yellow);
+  background-size: cover;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+#limited-time__img {
+  position: absolute;
+  top: -15.5rem;
+  right: -5rem;
+  width: 35rem;
+  transform: rotate(53deg);
+}
+
+.limited-time-wrapper {
+  transform: translate(0, 0);
+  width: 80vw;
+  margin: auto;
+}
+
+.limited-time__side-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: rotate(-37deg) translateY(-31%) translateX(-26%);
+  width: 9rem;
+  text-align: center;
+  font-size: 1.1rem;
+  background: var(--light-red);
+  border-radius: 5px;
+}
+
+.limited-time_content-wraper {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  letter-spacing: 0.04em;
+  padding: 2rem;
+}
+
+.limited-time__text {
+  font-size: 2.2rem;
+  z-index: 2;
+  padding-left: 5rem;
+}
+
+.limited-time__text--attention {
+  color: var(--white);
+}
+
+.limited-time__time {
+  color: var(--white);
+  font-size: 7rem;
+  z-index: 2;
+  font-family: var(--heading-font);
+  text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
 }
