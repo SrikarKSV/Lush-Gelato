@@ -6,46 +6,55 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lush Gelato</title>
         <link
-            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat&family=Poppins&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat&family=Poppins&family=Sanchez&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="./css/main.css">
     </head>
 
     <body>
-        <header>
-            <h1 id="logo">Lush Gelato</h1>
-            <nav>
-                <ul class="nav">
-                    <a href="#" class="nav__item nav__item--underline">
-                        <li>SHOP</li>
-                    </a>
-                    <a href="#" class="nav__item">
-                        <li>CONTACT</li>
-                    </a>
-                    <a href="#" class="nav__item">
-                        <li>REGISTER</li>
-                    </a>
-                    <li><i class="fas fa-shopping-cart"></i></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="hero">
-            <h2 class="hero__heading">Lush Gelato</h2>
-            <p class="hero__tagline">Hand made carefully prepared ice-cream right at your door step</p>
-        </section>
+        <div id="hero">
+            <header>
 
-
-
-
-
-
-
-
-
-
-
-
-
+                <h1 id="logo"><a href="#" class="logo__link"> Lush Gelato </a></h1>
+                <nav>
+                    <ul class="nav">
+                        <a href="#" class="nav__item ">
+                            <li class="nav__item--underline">SHOP</li>
+                        </a>
+                        <a href="#" class="nav__item">
+                            <li>CONTACT</li>
+                        </a>
+                        <a href="#" class="nav__item">
+                            <li>REGISTER</li>
+                        </a>
+                        <a href="#" class="nav__item nav__item--cart">
+                            <li><i class="fas fa-shopping-cart"></i></li>
+                        </a>
+                    </ul>
+                </nav>
+            </header>
+            <section id="hero-text">
+                <h2 class="hero-text__heading">Lush Gelato</h2>
+                <p class="hero-text__tagline">Hand made carefully prepared ice-cream right at your door step</p>
+            </section>
+        </div>
+        <main class="main-container">
+            <div class="limited-time-wrapper">
+                <section id="limited-time">
+                    <p class="limited-time__side-banner">Limited time</p>
+                    <div class="limited-time_content-wraper">
+                        <p class="limited-time__text"><span class="limited-time__text--attention">Grab your favourite
+                                flavour</span> before time runs
+                            out!!
+                        </p>
+                        <p class="limited-time__time">59:00</p>
+                    </div>
+                    <div class="limted-time__img-container">
+                        <img src="./img/limited-time.png" alt="" id="limited-time__img">
+                    </div>
+                </section>
+            </div>
+        </main>
 
 
 
