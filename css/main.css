@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-font: "Poppins", sans-serif;
+  --logo-font: "Abril Fatface", cursive;
+  --hero-logo-font: "Herr Von Muellerhoff", cursive;
+  --heading-font: "Herr Von Muellerhoff", cursive;
+  --main-background-left-color: #332379;
+  --main-background-right-color: #5b42ab;
+  --yellow: #ffc600;
+  --dark-yellow: #feb302;
+  --pink: #f654ae;
+  --red: #ff0000;
+  --light-red: #eb2f64;
+}
