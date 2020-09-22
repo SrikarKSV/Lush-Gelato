@@ -13,6 +13,7 @@
   --main-background-left-color: #332379;
   --main-background-right-color: #5b42ab;
   --section-width: 80vw;
+  --product-details-width: 80%;
   --yellow: #ffc600;
   --dark-yellow: #feb302;
   --pink: #f654ae;
@@ -39,6 +40,10 @@ body {
     var(--main-background-left-color),
     var(--main-background-right-color)
   );
+}
+
+img {
+  width: 100%;
 }
 
 /************************************** Navbar ***********************************/
@@ -254,12 +259,11 @@ header {
 }
 
 .special-flavours__products img {
-  width: 100%;
   transition: all 0.3s linear;
 }
 
 .special-flavour__content-details {
-  width: 80%;
+  width: var(--product-details-width);
   margin: auto;
   white-space: nowrap;
 }
@@ -317,7 +321,7 @@ header {
 
 .featured-products p {
   font-size: 1.8rem;
-  width: 80%;
+  width: var(--product-details-width);
   margin: 3.5rem 0;
   color: rgb(0, 0, 0, 0.8);
   text-shadow: 2px -2px 4px rgba(255, 255, 255, 0.3);
@@ -335,7 +339,34 @@ header {
 
 /************************************** End Featured products***********************************/
 
+.special-flavours__yummy-sticks .special-flavour__content-details {
+  --product-details-width: 65%;
+}
+
 .why-us {
   max-width: var(--section-width);
   margin: auto;
+}
+
+.why-us__reasons-wrapper {
+  background: url(../img/blackgrit.png) 1700px, var(--yellow);
+  margin: 1rem 0;
+  padding: 3.5rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  border-radius: 10px;
+}
+
+.why-us__reasons {
+  background: var(--white);
+  width: 25%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0.5rem;
 }
