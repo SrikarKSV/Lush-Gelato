@@ -12,6 +12,7 @@
   --heading-font: "Montserrat", sans-serif;
   --main-background-left-color: #332379;
   --main-background-right-color: #5b42ab;
+  --section-width: 80vw;
   --yellow: #ffc600;
   --dark-yellow: #feb302;
   --pink: #f654ae;
@@ -123,7 +124,7 @@ header {
 
 /************************************** Limited time ***********************************/
 #limited-time {
-  max-width: 80vw;
+  max-width: var(--section-width);
   margin: 3rem auto;
   background: url(../img/grit.0f8155d3.png) 1700px,
     url(../img/grit.0f8155d3.png) 1700px, var(--dark-yellow);
@@ -143,7 +144,7 @@ header {
 
 .limited-time-wrapper {
   transform: translate(0, 0);
-  width: 80vw;
+  width: var(--section-width);
   margin: auto;
 }
 
@@ -222,7 +223,7 @@ header {
 }
 
 .special-flavours {
-  width: 80vw;
+  width: var(--section-width);
   margin: 4rem auto;
   letter-spacing: var(--letter-spacing);
 }
@@ -260,6 +261,7 @@ header {
 .special-flavour__content-details {
   width: 80%;
   margin: auto;
+  white-space: nowrap;
 }
 
 .special-flavours__products h4 {
@@ -288,7 +290,7 @@ header {
 }
 
 .featured-products {
-  max-width: 80vw;
+  max-width: var(--section-width);
   margin: 4rem auto 10rem;
   background: url(../img/grit.0f8155d3.png) 1700px, var(--pink);
   background-size: cover;
@@ -326,8 +328,14 @@ header {
 .featured-products:nth-of-type(3) img {
   float: right;
   shape-outside: url(../img/feast-chocolate.webp);
-  margin: -11rem -15rem 0 0;
+  margin: -12rem -15rem 0 0;
   transform: rotate(34deg);
+  width: 43rem;
 }
 
 /************************************** End Featured products***********************************/
+
+.why-us {
+  max-width: var(--section-width);
+  margin: auto;
+}
