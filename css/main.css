@@ -15,12 +15,16 @@
   --yellow: #ffc600;
   --dark-yellow: #feb302;
   --pink: #f654ae;
-  --red: #ff0000;
+  --dark-pink: #e6489f;
+  --red: #d40000;
   --light-red: #eb2f64;
   --white: white;
   --section-heading-font-size: 2.3rem;
   --letter-spacing: 0.04em;
   --border-radius: 10px;
+  --add-to-cart-height: 2rem;
+  --add-to-cart-width: 7rem;
+  --add-to-cart-font-size: 1.09rem;
 }
 
 html {
@@ -124,7 +128,6 @@ header {
   background: url(../img/grit.0f8155d3.png) 1700px,
     url(../img/grit.0f8155d3.png) 1700px, var(--dark-yellow);
   background-size: cover;
-  position: relative;
   border-radius: 20px;
   overflow: hidden;
   position: relative;
@@ -185,17 +188,37 @@ header {
 }
 /************************************** End Limited time ***********************************/
 
+/************************************** Special flavour ***********************************/
 .add-to-cart {
   font-family: inherit;
   font-weight: 500;
   margin: 0.5rem auto;
-  font-size: 1.09rem;
+  font-size: var(--add-to-cart-font-size);
   background: #ffc600;
   border-radius: 8px;
   border: none;
-  height: 2rem;
-  width: 7rem;
+  height: var(--add-to-cart-height);
+  width: var(--add-to-cart-width);
   cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background: url(../img/blackgrit.png) center, #ffc600;
+  animation: 2s steps(10) 0s infinite normal none running dance;
+}
+
+.add-to-cart:hover ~ img {
+  transform: scale(2);
+}
+
+@keyframes dance {
+  0% {
+    background-position: 0px center;
+  }
+
+  100% {
+    background-position: -600px center;
+  }
 }
 
 .special-flavours {
@@ -215,30 +238,28 @@ header {
   margin-top: 1rem;
   background: url(../img/grit.0f8155d3.png) 1700px, var(--pink);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-items: center;
   align-items: center;
   border-radius: var(--border-radius);
   padding: 2rem;
+  gap: 20px;
+}
+
+.special-flavours__products {
+  background: var(--dark-pink);
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 .special-flavours__products img {
   width: 100%;
-  transition: transform 0.3s linear;
-}
-
-.special-flavours__products:hover img {
-  transform: scale(1.1);
+  transition: all 0.3s linear;
 }
 
 .special-flavour__content-details {
   width: 80%;
   margin: auto;
-}
-
-/* Butterscotch name is short so different width */
-.special-flavours__products:nth-of-type(3) div {
-  width: 60%;
 }
 
 .special-flavours__products h4 {
@@ -258,3 +279,55 @@ header {
   color: var(--red);
   text-decoration: line-through;
 }
+
+/************************************** End Special flavour ***********************************/
+
+/************************************** Featured products***********************************/
+.featured-products-wrapper {
+  overflow: hidden;
+}
+
+.featured-products {
+  max-width: 80vw;
+  margin: 4rem auto 10rem;
+  background: url(../img/grit.0f8155d3.png) 1700px, var(--pink);
+  background-size: cover;
+  border-radius: 20px;
+  position: relative;
+  padding: 3rem;
+  --add-to-cart-height: 3rem;
+  --add-to-cart-width: 12rem;
+  --add-to-cart-font-size: 1.5rem;
+}
+
+.featured-products:nth-of-type(3) {
+  margin-bottom: 1rem;
+}
+
+.featured-products h4 {
+  font-size: 4.5rem;
+  margin: 1rem auto 2rem;
+  font-family: var(--heading-font);
+  font-weight: normal;
+  color: var(--white);
+  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.featured-products p {
+  font-size: 1.8rem;
+  width: 80%;
+  margin: 3.5rem 0;
+  color: rgb(0, 0, 0, 0.8);
+  text-shadow: 2px -2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.featured-products:nth-of-type(1) img,
+.featured-products:nth-of-type(2) img,
+.featured-products:nth-of-type(3) img {
+  float: right;
+  shape-outside: url(../img/feast-chocolate.webp);
+  margin: -11rem -15rem 0 0;
+  transform: rotate(34deg);
+}
+
+/************************************** End Featured products***********************************/
