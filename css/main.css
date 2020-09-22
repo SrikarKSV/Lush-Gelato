@@ -8,10 +8,8 @@
 
 :root {
   --main-font: "Poppins", sans-serif;
-  --logo-font: "Abril Fatface", cursive;
   --hero-logo-font: "Herr Von Muellerhoff", cursive;
   --heading-font: "Montserrat", sans-serif;
-  --tagline-font: "Sanchez", serif;
   --main-background-left-color: #332379;
   --main-background-right-color: #5b42ab;
   --yellow: #ffc600;
@@ -20,6 +18,9 @@
   --red: #ff0000;
   --light-red: #eb2f64;
   --white: white;
+  --section-heading-font-size: 2.3rem;
+  --letter-spacing: 0.04em;
+  --border-radius: 10px;
 }
 
 html {
@@ -52,15 +53,15 @@ header {
 
 #logo {
   flex: 1;
-  margin: 0.7rem 5.2rem;
+  margin-left: 5.2rem;
+  padding-top: 0.8rem;
 }
 
 .logo__link {
   width: 2rem;
-  font-family: var(--logo-font);
+  font-family: var(--heading-font);
   color: var(--yellow);
   font-size: 3.5rem;
-  padding: 0.5rem;
   text-decoration: none;
 }
 
@@ -75,7 +76,7 @@ header {
   padding: 0.5rem;
   text-decoration: none;
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .nav__item--underline {
@@ -101,19 +102,22 @@ header {
   font-weight: normal;
   text-shadow: 3px 3px 4px #000000;
 }
+
 .hero-text__tagline {
   margin-top: -2rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   width: 50vw;
   color: var(--white);
   text-align: center;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing);
   text-shadow: 2px 2px 4px #000000;
-  font-family: var(--tagline-font);
+  font-family: var(--heading-font);
+  font-weight: 500;
 }
 
 /************************************** End Hero banner ***********************************/
 
+/************************************** Limited time ***********************************/
 #limited-time {
   max-width: 80vw;
   margin: 3rem auto;
@@ -158,7 +162,7 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-items: center;
   align-items: center;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing);
   padding: 2rem;
 }
 
@@ -178,4 +182,79 @@ header {
   z-index: 2;
   font-family: var(--heading-font);
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
+}
+/************************************** End Limited time ***********************************/
+
+.add-to-cart {
+  font-family: inherit;
+  font-weight: 500;
+  margin: 0.5rem auto;
+  font-size: 1.09rem;
+  background: #ffc600;
+  border-radius: 8px;
+  border: none;
+  height: 2rem;
+  width: 7rem;
+  cursor: pointer;
+}
+
+.special-flavours {
+  width: 80vw;
+  margin: 4rem auto;
+  letter-spacing: var(--letter-spacing);
+}
+
+.special-flavours__heading {
+  color: var(--yellow);
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: var(--section-heading-font-size);
+}
+
+.special-flavours__products-grid {
+  margin-top: 1rem;
+  background: url(../img/grit.0f8155d3.png) 1700px, var(--pink);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}
+
+.special-flavours__products img {
+  width: 100%;
+  transition: transform 0.3s linear;
+}
+
+.special-flavours__products:hover img {
+  transform: scale(1.1);
+}
+
+.special-flavour__content-details {
+  width: 80%;
+  margin: auto;
+}
+
+/* Butterscotch name is short so different width */
+.special-flavours__products:nth-of-type(3) div {
+  width: 60%;
+}
+
+.special-flavours__products h4 {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--white);
+  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.special-flavours__product-price {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.special-flavours__product-price span {
+  color: var(--red);
+  text-decoration: line-through;
 }
