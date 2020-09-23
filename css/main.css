@@ -339,6 +339,7 @@ header {
 
 /************************************** End Featured products***********************************/
 
+/************************************** Why us? ***********************************/
 .special-flavours__yummy-sticks .special-flavour__content-details {
   --product-details-width: 65%;
 }
@@ -351,17 +352,17 @@ header {
 .why-us__reasons-wrapper {
   background: url(../img/blackgrit.png) 1700px, var(--yellow);
   margin: 1rem 0;
-  padding: 3.5rem;
+  padding: 2rem;
   display: flex;
   justify-content: space-around;
-  gap: 20px;
   border-radius: 10px;
 }
 
 .why-us__reasons {
+  border-radius: 5px;
   background: var(--white);
   width: 25%;
-  padding: 2rem;
+  padding: 1.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -369,4 +370,32 @@ header {
   font-size: 1.5rem;
   text-align: center;
   margin: 0.5rem;
+}
+
+.why-us__reasons img {
+  width: 50%;
+}
+/************************************** End Why us? ***********************************/
+
+footer {
+  background: rgb(102, 75, 194, 0.5);
+  padding: 2rem;
+  margin-top: 4rem;
+}
+
+footer h5 {
+  font-size: 2rem;
+  font-family: var(--heading-font);
+  color: var(--yellow);
+  margin: 0.5rem 0;
+}
+
+.address,
+.me {
+  color: var(--white);
+  font-size: 1.1rem;
+}
+
+.me {
+  margin-top: 1rem;
 }
