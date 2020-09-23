@@ -12,7 +12,7 @@
   --heading-font: "Montserrat", sans-serif;
   --main-background-left-color: #332379;
   --main-background-right-color: #5b42ab;
-  --section-width: 80vw;
+  --section-width: min(80rem, 80vw);
   --product-details-width: 80%;
   --yellow: #ffc600;
   --dark-yellow: #feb302;
@@ -21,12 +21,11 @@
   --red: #d40000;
   --light-red: #eb2f64;
   --white: white;
-  --section-heading-font-size: 2.3rem;
+  --section-heading-font-size: clamp(2.5rem, 2.5vw, 8rem);
   --letter-spacing: 0.04em;
   --border-radius: 10px;
-  --add-to-cart-height: 2rem;
-  --add-to-cart-width: 7rem;
-  --add-to-cart-font-size: 1.09rem;
+  --add-to-cart-font-size: 1rem;
+  --add-to-cart-padding: 0.47em;
 }
 
 html {
@@ -64,15 +63,17 @@ header {
 #logo {
   flex: 1;
   margin-left: 5.2rem;
-  padding-top: 0.8rem;
+  height: 100%;
+  padding-top: 0.25em;
 }
 
 .logo__link {
   width: 2rem;
   font-family: var(--heading-font);
   color: var(--yellow);
-  font-size: 3.5rem;
+  font-size: clamp(3.5rem, 5vw, 4rem);
   text-decoration: none;
+  height: auto;
 }
 
 .nav {
@@ -83,10 +84,9 @@ header {
 
 .nav__item {
   margin: 1.5rem;
-  padding: 0.5rem;
   text-decoration: none;
   color: var(--white);
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1vw, 2rem);
 }
 
 .nav__item--underline {
@@ -108,15 +108,15 @@ header {
   margin-top: -8rem;
   font-family: var(--hero-logo-font);
   color: var(--yellow);
-  font-size: 8rem;
+  font-size: clamp(8rem, 8.6vw, 12rem);
   font-weight: normal;
   text-shadow: 3px 3px 4px #000000;
 }
 
 .hero-text__tagline {
   margin-top: -2rem;
-  font-size: 1.8rem;
-  width: 50vw;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  width: clamp(26rem, 45vw, 90rem);
   color: var(--white);
   text-align: center;
   letter-spacing: var(--letter-spacing);
@@ -176,7 +176,7 @@ header {
 }
 
 .limited-time__text {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 2.2vw, 5rem);
   z-index: 2;
   padding-left: 5rem;
 }
@@ -187,7 +187,7 @@ header {
 
 .limited-time__time {
   color: var(--white);
-  font-size: 7rem;
+  font-size: clamp(6rem, 5vw, 9rem);
   z-index: 2;
   font-family: var(--heading-font);
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
@@ -203,18 +203,13 @@ header {
   background: #ffc600;
   border-radius: 8px;
   border: none;
-  height: var(--add-to-cart-height);
-  width: var(--add-to-cart-width);
+  padding: var(--add-to-cart-padding);
   cursor: pointer;
 }
 
 .add-to-cart:hover {
   background: url(../img/blackgrit.png) center, #ffc600;
   animation: 2s steps(10) 0s infinite normal none running dance;
-}
-
-.add-to-cart:hover ~ img {
-  transform: scale(2);
 }
 
 @keyframes dance {
@@ -228,7 +223,7 @@ header {
 }
 
 .special-flavours {
-  width: var(--section-width);
+  max-width: var(--section-width);
   margin: 4rem auto;
   letter-spacing: var(--letter-spacing);
 }
@@ -248,14 +243,14 @@ header {
   justify-items: center;
   align-items: center;
   border-radius: var(--border-radius);
-  padding: 2rem;
+  padding: 2em;
   gap: 20px;
 }
 
 .special-flavours__products {
   background: var(--dark-pink);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1em;
 }
 
 .special-flavours__products img {
@@ -300,10 +295,9 @@ header {
   background-size: cover;
   border-radius: 20px;
   position: relative;
-  padding: 3rem;
-  --add-to-cart-height: 3rem;
-  --add-to-cart-width: 12rem;
-  --add-to-cart-font-size: 1.5rem;
+  padding: 3em;
+  --add-to-cart-font-size: 1.3rem;
+  --add-to-cart-padding: 0.38em;
 }
 
 .featured-products:nth-of-type(3) {
@@ -311,7 +305,7 @@ header {
 }
 
 .featured-products h4 {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 4vw, 8rem);
   margin: 1rem auto 2rem;
   font-family: var(--heading-font);
   font-weight: normal;
@@ -320,9 +314,9 @@ header {
 }
 
 .featured-products p {
-  font-size: 1.8rem;
+  font-size: clamp(1.5rem, 1.8vw, 6rem);
   width: var(--product-details-width);
-  margin: 3.5rem 0;
+  margin: 3rem 0 1.5rem;
   color: rgb(0, 0, 0, 0.8);
   text-shadow: 2px -2px 4px rgba(255, 255, 255, 0.3);
 }
@@ -332,6 +326,7 @@ header {
 .featured-products:nth-of-type(3) img {
   float: right;
   shape-outside: url(../img/feast-chocolate.webp);
+  shape-margin: 2.5rem;
   margin: -12rem -15rem 0 0;
   transform: rotate(34deg);
   width: 43rem;
@@ -350,9 +345,9 @@ header {
 }
 
 .why-us__reasons-wrapper {
-  background: url(../img/blackgrit.png) 1700px, var(--yellow);
+  background: url(../img/blackgrit.png) 1700px, var(--dark-yellow);
   margin: 1rem 0;
-  padding: 2rem;
+  padding: 2em;
   display: flex;
   justify-content: space-around;
   border-radius: 10px;
@@ -362,38 +357,42 @@ header {
   border-radius: 5px;
   background: var(--white);
   width: 25%;
-  padding: 1.5rem 0.5rem;
+  padding: 1.5em 0.5em;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.3vw, 3rem);
   text-align: center;
   margin: 0.5rem;
 }
 
 .why-us__reasons img {
   width: 50%;
+  padding-bottom: 1em;
 }
 /************************************** End Why us? ***********************************/
 
 footer {
   background: rgb(102, 75, 194, 0.5);
-  padding: 2rem;
+  padding: 2em;
   margin-top: 4rem;
 }
 
 footer h5 {
-  font-size: 2rem;
+  font-size: clamp(2rem, 2vw, 3rem);
   font-family: var(--heading-font);
   color: var(--yellow);
   margin: 0.5rem 0;
 }
 
+footer p {
+  font-size: clamp(1rem, 1vw, 3rem);
+}
+
 .address,
 .me {
   color: var(--white);
-  font-size: 1.1rem;
 }
 
 .me {
