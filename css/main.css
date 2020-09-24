@@ -162,6 +162,10 @@ header {
 
 /************************************** End Hero banner ***********************************/
 
+/* To overcome margin collapsing */
+#main-container {
+  padding: 1px;
+}
 /************************************** Limited time ***********************************/
 #limited-time {
   max-width: var(--section-width);
@@ -211,7 +215,7 @@ header {
 }
 
 .limited-time__text {
-  font-size: clamp(2rem, 2.2vw, 5rem);
+  font-size: clamp(2rem, 2.2vw, 3rem);
   z-index: 2;
   padding-left: 5rem;
 }
@@ -340,7 +344,7 @@ header {
 }
 
 .featured-products h4 {
-  font-size: clamp(2.5rem, 4vw, 8rem);
+  font-size: clamp(2.5rem, 4vw, 6rem);
   margin: 1rem auto 2rem;
   font-family: var(--heading-font);
   font-weight: normal;
@@ -349,7 +353,7 @@ header {
 }
 
 .featured-products p {
-  font-size: clamp(1.5rem, 1.8vw, 6rem);
+  font-size: clamp(1.5rem, 1.8vw, 3.5rem);
   width: var(--product-details-width);
   margin: 3rem 0 1.5rem;
   color: rgb(0, 0, 0, 0.8);
@@ -412,6 +416,8 @@ footer {
   background: rgb(102, 75, 194, 0.5);
   padding: 2em;
   margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 footer h5 {
@@ -432,4 +438,45 @@ footer p {
 
 .me {
   margin-top: 1rem;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1.5rem, 1fr));
+}
+
+.contact i,
+.contact a {
+  font-size: 3rem;
+  color: rgb(0, 0, 0, 0.6);
+  width: 3rem;
+}
+
+.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+.fa-github:hover,
+.fa-codepen:hover {
+  color: #fff;
+}
+
+.fa-instagram:hover {
+  filter: drop-shadow(0px 0px 1px black);
+  background: linear-gradient(
+    to bottom,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
