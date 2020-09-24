@@ -50,7 +50,6 @@ img {
 header {
   display: flex;
   height: 6rem;
-  flex-wrap: wrap;
 }
 
 #hero {
@@ -65,6 +64,7 @@ header {
   margin-left: 5.2rem;
   height: 100%;
   padding-top: 0.25em;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 .logo__link {
@@ -95,6 +95,8 @@ header {
   overflow: hidden;
   transition: all 0.2s linear;
   z-index: 2;
+  /* text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.8); */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .nav__item::after {
@@ -109,12 +111,14 @@ header {
   border-radius: 50%;
   z-index: -1;
   transition: all 0.1s linear;
+  transition-property: background-color color border-radius;
 }
 
 .nav__item:hover {
   background-color: rgba(255, 255, 255, 0.7);
   color: black;
   border-radius: 5px;
+  text-shadow: none;
 }
 
 .nav__item:hover::after {
@@ -126,6 +130,17 @@ header {
 }
 .nav__item:hover .nav__item--underline {
   border-color: transparent;
+}
+
+/* Media queries */
+@media screen and (max-width: 1100px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  #logo {
+    margin: 1rem 0 0.2rem;
+  }
 }
 
 /************************************** End Navbar ***********************************/
