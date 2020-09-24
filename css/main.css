@@ -519,7 +519,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-footer h6 {
+footer h5 {
   font-size: clamp(2rem, 2vw, 3rem);
   font-family: var(--heading-font);
   color: var(--yellow);
