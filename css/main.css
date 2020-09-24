@@ -18,7 +18,7 @@
   --dark-yellow: #feb302;
   --pink: #f654ae;
   --dark-pink: #e6489f;
-  --red: #d40000;
+  --old-price: #dfdfdf;
   --light-red: #eb2f64;
   --white: white;
   --section-heading-font-size: clamp(2.5rem, 2.5vw, 8rem);
@@ -95,7 +95,6 @@ header {
   overflow: hidden;
   transition: all 0.2s linear;
   z-index: 2;
-  /* text-shadow: 0px -1px 2px rgba(0, 0, 0, 0.8); */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -241,10 +240,44 @@ header {
 
 .limited-time__time {
   color: var(--white);
-  font-size: clamp(6rem, 5vw, 9rem);
+  font-size: clamp(5.8rem, 5vw, 9rem);
   z-index: 2;
   font-family: var(--heading-font);
   text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Media queries */
+@media screen and (max-width: 1100px) {
+  .limited-time_content-wraper {
+    grid-template-columns: 1fr;
+    padding: 0.9rem;
+  }
+
+  .limited-time__text {
+    width: 80%;
+    padding: 0;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  #limited-time__img {
+    top: -6rem;
+    right: -3rem;
+    width: 31rem;
+    transform: rotate(59deg);
+  }
+}
+
+@media screen and (max-width: 740px) {
+  #limited-time__img {
+    top: 0rem;
+    right: -2rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  #limited-time__img {
+    display: none;
+  }
 }
 /************************************** End Limited time ***********************************/
 
@@ -280,6 +313,11 @@ header {
   max-width: var(--section-width);
   margin: 4rem auto;
   letter-spacing: var(--letter-spacing);
+}
+
+/* Giving yummy sticks section less margin */
+section:nth-of-type(3) {
+  margin-top: 1rem;
 }
 
 .special-flavours__heading {
@@ -326,12 +364,14 @@ header {
 }
 
 .special-flavours__product-price {
-  color: black;
+  color: var(--white);
+  text-shadow: 2px -2px 4px rgba(0, 0, 0, 0.5);
   font-size: 1.2rem;
 }
 
 .special-flavours__product-price span {
-  color: var(--red);
+  text-shadow: none;
+  color: black;
   text-decoration: line-through;
 }
 
@@ -359,7 +399,7 @@ header {
 }
 
 .featured-products h4 {
-  font-size: clamp(2.5rem, 4vw, 6rem);
+  font-size: clamp(2.2rem, 4vw, 6rem);
   margin: 1rem auto 2rem;
   font-family: var(--heading-font);
   font-weight: normal;
@@ -368,22 +408,46 @@ header {
 }
 
 .featured-products p {
-  font-size: clamp(1.5rem, 1.8vw, 3.5rem);
+  font-size: clamp(1.3rem, 1.8vw, 3.5rem);
   width: var(--product-details-width);
   margin: 3rem 0 1.5rem;
   color: rgb(0, 0, 0, 0.8);
   text-shadow: 2px -2px 4px rgba(255, 255, 255, 0.3);
 }
 
-.featured-products:nth-of-type(1) img,
-.featured-products:nth-of-type(2) img,
-.featured-products:nth-of-type(3) img {
+.featured-products img {
   float: right;
   shape-outside: url(../img/feast-chocolate.webp);
   shape-margin: 2.5rem;
   margin: -12rem -15rem 0 0;
   transform: rotate(34deg);
   width: 43rem;
+}
+
+/* Media queries */
+@media screen and (max-width: 1100px) {
+  .featured-products {
+    margin: 0rem auto 4rem;
+    padding: 2em;
+  }
+
+  .featured-products img {
+    float: none;
+    transform: rotate(0);
+    width: 20rem;
+    display: block;
+    margin: auto;
+  }
+
+  .featured-products h4 {
+    margin: 0;
+  }
+
+  .featured-products p {
+    margin: 0;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
 }
 
 /************************************** End Featured products***********************************/
@@ -425,6 +489,26 @@ header {
   width: 50%;
   padding-bottom: 1em;
 }
+
+/* Media queries */
+@media screen and (max-width: 750px) {
+  .why-us__reasons img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .why-us__reasons-wrapper {
+    flex-direction: column;
+  }
+  .why-us__reasons img {
+    width: 30%;
+  }
+  .why-us__reasons {
+    width: 100%;
+    padding: 0.5em;
+  }
+}
 /************************************** End Why us? ***********************************/
 
 footer {
@@ -435,7 +519,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
-footer h5 {
+footer h6 {
   font-size: clamp(2rem, 2vw, 3rem);
   font-family: var(--heading-font);
   color: var(--yellow);
