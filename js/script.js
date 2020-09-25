@@ -3,6 +3,8 @@ const addToCartBtns = document.querySelectorAll("button.add-to-cart");
 const addToCartFeaturedBtns = document.querySelectorAll(
   "button.add-to-cart-featured"
 );
+const header = document.querySelector("header");
+const mainContainer = document.querySelector("#hero-text");
 
 // Event Listeners
 addToCartBtns.forEach((addToCartBtn) => {
@@ -33,3 +35,17 @@ function animateImage(parent, keyframeName) {
     img.classList.remove(keyframeName);
   });
 }
+
+// Header scroll navbar
+
+const headerObserver = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      header.classList.add("nav-scrolled");
+    } else {
+      header.classList.remove("nav-scrolled");
+    }
+  });
+});
+
+headerObserver.observe(mainContainer);

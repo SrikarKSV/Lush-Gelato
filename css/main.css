@@ -26,6 +26,8 @@
   --border-radius: 10px;
   --add-to-cart-font-size: 1rem;
   --add-to-cart-padding: 0.47em;
+  --footer-background: rgb(102, 75, 194, 0.5);
+  --nav-item-hover-background: rgba(255, 255, 255, 0.7);
 }
 
 html {
@@ -50,6 +52,17 @@ img {
 header {
   display: flex;
   height: 6rem;
+  position: fixed;
+  z-index: 200;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.nav-scrolled {
+  --nav-item-hover-background: rgba(255, 255, 255);
+  top: -0.5rem;
+  background-color: rgb(97, 64, 200);
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.9));
 }
 
 #hero {
@@ -60,6 +73,7 @@ header {
   position: relative;
 }
 
+/* Black background to cover the bright background and balance contrast */
 #hero::after {
   content: "";
   position: absolute;
@@ -72,21 +86,20 @@ header {
 }
 
 #logo {
-  flex: 1;
+  flex: 1 0.5;
   margin-left: 5.2rem;
   height: 100%;
-  padding-top: 0.25em;
+  display: flex;
+  align-items: center;
   text-shadow: 2px 2px 2px #000000;
   z-index: 1;
 }
 
 .logo__link {
-  width: 2rem;
   font-family: var(--heading-font);
   color: var(--yellow);
   font-size: clamp(3.2rem, 5vw, 4rem);
   text-decoration: none;
-  height: auto;
 }
 
 .nav {
@@ -127,7 +140,7 @@ header {
 }
 
 .nav__item:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--nav-item-hover-background);
   color: black;
   border-radius: 5px;
   text-shadow: none;
@@ -144,15 +157,10 @@ header {
   border-color: transparent;
 }
 
-/* Media queries */
-@media screen and (max-width: 1100px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-  #logo {
-    margin: 1rem 0 0.2rem;
-  }
+.nav__item--cart {
+  border: 0;
+  cursor: pointer;
+  background: transparent;
 }
 
 /************************************** End Navbar ***********************************/
@@ -167,7 +175,7 @@ header {
 }
 
 .hero-text__heading {
-  margin-top: -8rem;
+  margin-top: 2rem;
   font-family: var(--hero-logo-font);
   color: var(--yellow);
   font-size: clamp(7rem, 8.6vw, 12rem);
@@ -525,7 +533,7 @@ section:nth-of-type(3) {
 /************************************** End Why us? ***********************************/
 
 footer {
-  background: rgb(102, 75, 194, 0.5);
+  background: var(--footer-background);
   padding: 2em;
   margin-top: 4rem;
   display: grid;
@@ -601,6 +609,14 @@ footer p {
 .animate-featured-img {
   animation: animate-featured-img 0.3s alternate ease;
   animation-iteration-count: 2;
+}
+
+/* For smaller screen sizes */
+@media screen and (max-width: 1100px) {
+  .animate-featured-img {
+    animation: animate-img 0.3s alternate ease;
+    animation-iteration-count: 2;
+  }
 }
 
 @keyframes animate-featured-img {
