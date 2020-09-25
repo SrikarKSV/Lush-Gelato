@@ -57,6 +57,18 @@ header {
   background-size: cover;
   height: 100vh;
   width: 100%;
+  position: relative;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
 #logo {
@@ -65,13 +77,14 @@ header {
   height: 100%;
   padding-top: 0.25em;
   text-shadow: 2px 2px 2px #000000;
+  z-index: 1;
 }
 
 .logo__link {
   width: 2rem;
   font-family: var(--heading-font);
   color: var(--yellow);
-  font-size: clamp(3.5rem, 5vw, 4rem);
+  font-size: clamp(3.2rem, 5vw, 4rem);
   text-decoration: none;
   height: auto;
 }
@@ -157,14 +170,15 @@ header {
   margin-top: -8rem;
   font-family: var(--hero-logo-font);
   color: var(--yellow);
-  font-size: clamp(8rem, 8.6vw, 12rem);
+  font-size: clamp(7rem, 8.6vw, 12rem);
   font-weight: normal;
   text-shadow: 3px 3px 4px #000000;
+  z-index: 1;
 }
 
 .hero-text__tagline {
   margin-top: -2rem;
-  font-size: clamp(1.5rem, 2vw, 3rem);
+  font-size: clamp(1.3rem, 2vw, 3rem);
   width: clamp(26rem, 45vw, 90rem);
   color: var(--white);
   text-align: center;
@@ -172,6 +186,7 @@ header {
   text-shadow: 2px 2px 4px #000000;
   font-family: var(--heading-font);
   font-weight: 500;
+  z-index: 1;
 }
 
 /************************************** End Hero banner ***********************************/
@@ -282,7 +297,8 @@ header {
 /************************************** End Limited time ***********************************/
 
 /************************************** Special flavour ***********************************/
-.add-to-cart {
+.add-to-cart,
+.add-to-cart-featured {
   font-family: inherit;
   font-weight: 500;
   margin: 0.5rem auto;
@@ -294,7 +310,8 @@ header {
   cursor: pointer;
 }
 
-.add-to-cart:hover {
+.add-to-cart:hover,
+.add-to-cart-featured:hover {
   background: url(../img/blackgrit.png) center, #ffc600;
   animation: 2s steps(10) 0s infinite normal none running dance;
 }
@@ -343,10 +360,6 @@ section:nth-of-type(3) {
   background: var(--dark-pink);
   border-radius: 10px;
   padding: 1em;
-}
-
-.special-flavours__products img {
-  transition: all 0.3s linear;
 }
 
 .special-flavour__content-details {
@@ -578,4 +591,32 @@ footer p {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.animate-img {
+  animation: animate-img 0.3s alternate ease;
+  animation-iteration-count: 2;
+}
+
+.animate-featured-img {
+  animation: animate-featured-img 0.3s alternate ease;
+  animation-iteration-count: 2;
+}
+
+@keyframes animate-featured-img {
+  from {
+    transform: rotate(34deg);
+  }
+  to {
+    transform: rotate(34deg) scale(1.05);
+  }
+}
+
+@keyframes animate-img {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }
