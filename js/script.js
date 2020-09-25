@@ -38,14 +38,17 @@ function animateImage(parent, keyframeName) {
 
 // Header scroll navbar
 
-const headerObserver = new IntersectionObserver(function (entries) {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      header.classList.add("nav-scrolled");
-    } else {
-      header.classList.remove("nav-scrolled");
-    }
-  });
-});
+const headerObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        header.classList.add("nav-scrolled");
+      } else {
+        header.classList.remove("nav-scrolled");
+      }
+    });
+  },
+  { rootMargin: "-360px" }
+);
 
 headerObserver.observe(mainContainer);
