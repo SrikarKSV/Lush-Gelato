@@ -579,7 +579,8 @@ section:nth-of-type(3) {
   background: var(--main-background-left-color);
   border-radius: 10px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: space-between;
   gap: 20px;
 }
 
@@ -588,10 +589,6 @@ section:nth-of-type(3) {
 }
 
 .checkout-cart__product {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
-  align-items: center;
   background-color: var(--pink);
   border-radius: 10px;
   padding: 1em;
