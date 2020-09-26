@@ -10,6 +10,9 @@ const checkoutWrapper = document.querySelector(".checkout-cart-wrapper");
 const cartProductWrapper = document.querySelector(".cart-products-wrapper");
 const closeCartBtn = document.querySelector(".close-cart");
 const addProductToCartBtns = document.querySelectorAll(".cartBtn");
+const addProductBtns = document.querySelectorAll(".plus");
+const subtractProductBtns = document.querySelectorAll(".minus");
+const addedProductsToCart = [];
 
 // Event Listeners
 addToCartBtns.forEach((addToCartBtn) => {
@@ -29,12 +32,22 @@ addProductToCartBtns.forEach((addProductToCartBtn) => {
   addProductToCartBtn.addEventListener("click", addToCart);
 });
 
+addProductBtns.forEach((addProductBtn) => {
+  addProductBtn.addEventListener("click", addOneMoreproduct);
+});
+subtractProductBtns.forEach((subtractProductBtn) => {
+  subtractProductBtn.addEventListener("click", subtractOneMoreproduct);
+});
+
 // Functions
 
 // Add to cart
 function addToCart(event) {
-  productDetails = event.currentTarget.dataset;
-  htmlString = `
+  if (!addedProductsToCart.includes(event.currentTarget)) {
+    addedProductsToCart.push(event.currentTarget);
+    productDetails = event.currentTarget.dataset;
+    htmlString = `
+  <div class="checkout-cart__product" data-producttitle="${productDetails.title}">
         <img src="${productDetails.img}" alt="Mango Zap" class="checkout-cart__img">
         <div class="checkout-cart__product-details">
             <h4 class="special-flavours__product-name">${productDetails.title}</h4>
@@ -45,11 +58,58 @@ function addToCart(event) {
             <button class="minus"><i class="fas fa-minus"></i></button><br>
             <button class="delete">Delete</button>
         </div>
+        </div>
   `;
-  const div = document.createElement("div");
-  div.classList.add("checkout-cart__product");
-  div.innerHTML = htmlString;
-  cartProductWrapper.appendChild(div);
+    const htmlFragment = document
+      .createRange()
+      .createContextualFragment(htmlString);
+    // Adding event listeners to buttons
+    const addBtn = htmlFragment.querySelector(".plus");
+    addBtn.addEventListener("click", addOneMoreproduct);
+    const subtractBtn = htmlFragment.querySelector(".minus");
+    subtractBtn.addEventListener("click", subtractOneMoreproduct);
+    const deleteBtn = htmlFragment.querySelector(".delete");
+    deleteBtn.addEventListener("click", deleteProduct);
+    cartProductWrapper.appendChild(htmlFragment);
+    // Disabling the button
+    const addToCartBtn = event.currentTarget;
+    addToCartBtn.disabled = true;
+    addToCartBtn.classList.add("already-added");
+  } else {
+    navigator.vibrate(200, 300, 400, 300, 200);
+  }
+}
+
+// Delete product
+function deleteProduct(event) {
+  const productWrapper = event.currentTarget.parentElement.parentElement;
+  const cartBtnIndex =
+    event.currentTarget.parentElement.parentElement.dataset.producttitle;
+  const cartBtn = addedProductsToCart.find((cart) => {
+    if (cart.dataset.title === cartBtnIndex) {
+      return cart;
+    }
+  });
+  cartBtn.classList.remove("already-added");
+  cartBtn.disabled = false;
+  addedProductsToCart.splice(cartBtnIndex, 1);
+  productWrapper.remove();
+  event.stopPropagation();
+}
+
+// Add and subtract buttons
+function addOneMoreproduct(event) {
+  const input = event.currentTarget.nextElementSibling;
+  const newValue = 1 + parseInt(input.value);
+  input.value = newValue;
+}
+
+function subtractOneMoreproduct(event) {
+  const input = event.currentTarget.previousElementSibling;
+  const newValue = parseInt(input.value) - 1;
+  if (newValue >= 1) {
+    input.value = newValue;
+  }
 }
 
 // Toggle checkout cart
