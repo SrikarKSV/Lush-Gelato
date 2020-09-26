@@ -759,6 +759,15 @@ footer p {
   animation-iteration-count: 2;
 }
 
+.already-added {
+  background-color: var(--light-red);
+  cursor: not-allowed;
+}
+
+.already-added:hover {
+  background-color: var(--light-red);
+}
+
 /* For smaller screen sizes */
 @media screen and (max-width: 1100px) {
   .animate-featured-img {
