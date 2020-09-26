@@ -376,7 +376,7 @@ section:nth-of-type(3) {
   white-space: nowrap;
 }
 
-.special-flavours__products h4 {
+.special-flavours__product-name {
   font-family: var(--heading-font);
   font-size: 1.5rem;
   color: var(--white);
@@ -532,6 +532,151 @@ section:nth-of-type(3) {
 }
 /************************************** End Why us? ***********************************/
 
+.checkout-cart-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  transform: translateY(-200%);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.checkout-cart {
+  width: 90%;
+  height: 90vh;
+  background-color: var(--main-background-right-color);
+  padding: 2em;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  padding: 0.5em;
+  font-size: clamp(2rem, 2vw, 4rem);
+  cursor: pointer;
+}
+
+.cart-products-wrapper {
+  overflow-y: auto;
+  background-color: var(--white);
+  height: 75%;
+  margin: 1rem 0;
+  padding: 1em;
+  background: var(--main-background-left-color);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.checkout-cart__product-details {
+  padding: 1em 1em 0em;
+}
+
+.checkout-cart__product {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  align-items: center;
+  background-color: var(--pink);
+  border-radius: 10px;
+  padding: 1em;
+  max-width: 30rem;
+}
+
+.checkout-cart__img {
+  width: 80%;
+}
+
+.checkout-cart h6,
+.buy-wrapper {
+  text-align: center;
+}
+
+.plus,
+.minus {
+  border: none;
+  font-size: 1.2rem;
+  background: transparent;
+  cursor: pointer;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.plus:hover,
+.minus:hover {
+  color: black;
+}
+
+#quantity {
+  font-size: 1rem;
+  padding: 0.3em;
+  border: 0;
+  outline: none;
+  width: 3rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.delete {
+  border: 0;
+  font-size: 1.1rem;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: var(--light-red);
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.cost-wrapper {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+.buy-button {
+  font-size: 1rem;
+  padding: 0 0.5em;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  background-color: var(--dark-yellow);
+  color: var(--white);
+  font-family: var(--main-font);
+  font-size: 1.8rem;
+}
+
+.checkout-cart-wrapper-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/************************************** Footer ***********************************/
 footer {
   background: var(--footer-background);
   padding: 2em;
@@ -601,6 +746,9 @@ footer p {
   -webkit-text-fill-color: transparent;
 }
 
+/************************************** End Footer ***********************************/
+
+/************************************** Product hover animation ***********************************/
 .animate-img {
   animation: animate-img 0.3s alternate ease;
   animation-iteration-count: 2;
