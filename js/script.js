@@ -82,16 +82,17 @@ function addToCart(event) {
 
 // Delete product
 function deleteProduct(event) {
+  // Parent element
   const productWrapper = event.currentTarget.parentElement.parentElement;
-  const cartBtnIndex =
+  // The title of the product
+  const productTitle =
     event.currentTarget.parentElement.parentElement.dataset.producttitle;
-  const cartBtn = addedProductsToCart.find((cart) => {
-    if (cart.dataset.title === cartBtnIndex) {
-      return cart;
-    }
+  // Use findindex too for index
+  const cartBtnIndex = addedProductsToCart.findIndex((cart) => {
+    return cart.dataset.title === productTitle;
   });
-  cartBtn.classList.remove("already-added");
-  cartBtn.disabled = false;
+  addedProductsToCart[cartBtnIndex].classList.remove("already-added");
+  addedProductsToCart[cartBtnIndex].disabled = false;
   addedProductsToCart.splice(cartBtnIndex, 1);
   productWrapper.remove();
   event.stopPropagation();
