@@ -228,7 +228,7 @@ const headerObserver = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "-220px" }
+  { rootMargin: "-175px" }
 );
 
 headerObserver.observe(mainContainer);
