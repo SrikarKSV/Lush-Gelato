@@ -941,6 +941,7 @@ footer p {
 
 .already-added {
   background-color: var(--light-red);
+  filter: brightness(80%);
   cursor: not-allowed;
 }
 
