@@ -51,7 +51,7 @@ img {
 
 header {
   display: flex;
-  height: 6rem;
+  height: 5.8rem;
   position: fixed;
   z-index: 200;
   width: 100%;
@@ -276,6 +276,7 @@ header {
   align-items: center;
   height: calc(100vh - 6rem);
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .hero-text__heading {
@@ -286,6 +287,19 @@ header {
   font-weight: normal;
   text-shadow: 3px 3px 4px #000000;
   z-index: 1;
+  opacity: 0;
+  animation: fadeUp 0.5s forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-text__tagline {
@@ -300,6 +314,18 @@ header {
   font-family: var(--heading-font);
   font-weight: 500;
   z-index: 1;
+  opacity: 0;
+  animation: scale 0.5s forwards;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -318,6 +344,7 @@ header {
 /* To overcome margin collapsing */
 #main-container {
   padding: 1px;
+  overflow: hidden;
 }
 /************************************** Limited time ***********************************/
 #limited-time {
