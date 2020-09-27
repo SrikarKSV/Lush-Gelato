@@ -592,7 +592,6 @@ section:nth-of-type(3) {
   background-color: var(--pink);
   border-radius: 10px;
   padding: 1em;
-  max-width: 30rem;
 }
 
 .checkout-cart__img {
