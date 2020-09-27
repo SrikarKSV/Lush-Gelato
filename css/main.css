@@ -96,7 +96,7 @@ header {
 .logo__link {
   font-family: var(--heading-font);
   color: var(--yellow);
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   padding-left: 0.4em;
   text-decoration: none;
 }
@@ -170,15 +170,20 @@ header {
 
 /* Media quries(Burger) */
 @media screen and (max-width: 1020px) {
+  header {
+    height: 5.5rem;
+  }
+
   .burger {
     display: block;
     cursor: pointer;
+    padding: 0.2em;
   }
 
   .burger span {
-    padding: 0.1rem 1.5rem;
+    padding: 0.1rem 1.3rem;
     background: var(--white);
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     display: block;
     transition: transform 0.5s ease;
   }
@@ -207,24 +212,58 @@ header {
   }
 
   .toggle .line1 {
-    transform: rotateZ(48deg) translateY(500%);
+    transform: rotateZ(48deg) translateY(376%);
   }
 
   .toggle .line2 {
     transform: translateX(500%);
   }
   .toggle .line3 {
-    transform: rotateZ(-46deg) translateY(-550%);
+    transform: rotateZ(-46deg) translateY(-403%);
   }
 
   .nav__item--cart {
-    font-size: 1.8em;
+    font-size: clamp(1.6rem, 3vw, 2rem);
     padding: 0;
   }
 
   .nav__links .nav__item {
     width: 10rem;
     padding: 0.5em 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    height: 5rem;
+  }
+
+  .logo__link {
+    font-size: 1.5rem;
+  }
+
+  .nav__item--cart {
+    font-size: 1.5rem;
+  }
+  .fa-shopping-cart {
+    padding: 0.2em;
+  }
+
+  .burger {
+    margin-left: 0;
+    padding: 0.25rem;
+  }
+
+  .burger span {
+    padding: 0.07em 0.8em;
+    margin: 0.25rem 0;
+  }
+  .toggle .line1 {
+    transform: rotateZ(48deg) translateY(365%);
+  }
+
+  .toggle .line3 {
+    transform: rotateZ(-46deg) translateY(-332%);
   }
 }
 
@@ -265,10 +304,10 @@ header {
 
 @media screen and (max-width: 450px) {
   .hero-text__heading {
-    font-size: 5.5rem;
+    font-size: 5.6rem;
   }
   .hero-text__tagline {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-top: -1rem;
     width: 20rem;
   }
@@ -379,6 +418,17 @@ header {
     display: none;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .limited-time__text {
+    font-size: 1.7rem;
+  }
+
+  .limited-time__time {
+    font-size: 5.2rem;
+  }
+}
+
 /************************************** End Limited time ***********************************/
 
 /************************************** Special flavour ***********************************/
@@ -473,6 +523,16 @@ section:nth-of-type(3) {
   text-decoration: line-through;
 }
 
+@media screen and (max-width: 450px) {
+  .special-flavours__heading {
+    font-size: 2.1rem;
+  }
+
+  .special-flavours__products-grid {
+    padding: 1em;
+  }
+}
+
 /************************************** End Special flavour ***********************************/
 
 /************************************** Featured products***********************************/
@@ -548,6 +608,22 @@ section:nth-of-type(3) {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .featured-products {
+    line-height: 1.8rem;
+  }
+  .featured-products img {
+    width: 15rem;
+  }
+  .featured-products h4 {
+    font-size: 1.8rem;
+  }
+
+  .featured-products p {
+    font-size: 1.2rem;
+  }
+}
+
 /************************************** End Featured products***********************************/
 
 /************************************** Why us? ***********************************/
@@ -607,8 +683,22 @@ section:nth-of-type(3) {
     padding: 0.5em;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .why-us__reasons {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .why-us__heading {
+    font-size: 1.8rem;
+  }
+}
+
 /************************************** End Why us? ***********************************/
 
+/************************************** Checkout cart ***********************************/
 .checkout-cart-wrapper {
   width: 100vw;
   height: 100vh;
@@ -753,6 +843,7 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
   pointer-events: all;
 }
+/************************************** End Checkout cart ***********************************/
 
 /************************************** Footer ***********************************/
 footer {
@@ -822,6 +913,17 @@ footer p {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 400px) {
+  .address,
+  .me {
+    font-size: 0.8rem;
+  }
+  .contact i,
+  .contact a {
+    font-size: 2rem;
+  }
 }
 
 /************************************** End Footer ***********************************/
