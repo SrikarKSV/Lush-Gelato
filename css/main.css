@@ -60,7 +60,6 @@ header {
 
 .nav-scrolled {
   --nav-item-hover-background: rgba(255, 255, 255);
-  top: -0.5rem;
   background-color: rgb(97, 64, 200);
   filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.9));
 }
@@ -81,13 +80,12 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 0;
 }
 
 #logo {
   flex: 1 0.5;
-  margin-left: 5.2rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -98,11 +96,13 @@ header {
 .logo__link {
   font-family: var(--heading-font);
   color: var(--yellow);
-  font-size: clamp(3.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  padding-left: 0.4em;
   text-decoration: none;
 }
 
-.nav {
+.nav,
+.nav__links {
   display: flex;
   list-style-type: none;
   height: 100%;
@@ -139,14 +139,14 @@ header {
   transition-property: background-color color border-radius;
 }
 
-.nav__item:hover {
+.nav__links .nav__item:hover {
   background-color: var(--nav-item-hover-background);
   color: black;
   border-radius: 5px;
   text-shadow: none;
 }
 
-.nav__item:hover::after {
+.nav__links .nav__item:hover::after {
   transform: translateY(80%);
 }
 
@@ -161,6 +161,71 @@ header {
   border: 0;
   cursor: pointer;
   background: transparent;
+}
+
+.burger {
+  display: none;
+  z-index: 1000;
+}
+
+/* Media quries(Burger) */
+@media screen and (max-width: 1020px) {
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger span {
+    padding: 0.1rem 1.5rem;
+    background: var(--white);
+    margin: 0.5rem 0;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .nav__links {
+    background-color: var(--yellow);
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: transform 0.5s ease;
+
+    align-items: center;
+  }
+
+  .nav-open {
+    transform: translate(-100%);
+  }
+
+  .toggle {
+    z-index: 2000;
+  }
+
+  .toggle .line1 {
+    transform: rotateZ(48deg) translateY(500%);
+  }
+
+  .toggle .line2 {
+    transform: translateX(500%);
+  }
+  .toggle .line3 {
+    transform: rotateZ(-46deg) translateY(-550%);
+  }
+
+  .nav__item--cart {
+    font-size: 1.8em;
+    padding: 0;
+  }
+
+  .nav__links .nav__item {
+    width: 10rem;
+    padding: 0.5em 0;
+  }
 }
 
 /************************************** End Navbar ***********************************/
@@ -186,6 +251,7 @@ header {
 
 .hero-text__tagline {
   margin-top: -2rem;
+  font-size: clamp(1rem, 2vw, 3rem);
   font-size: clamp(1.3rem, 2vw, 3rem);
   width: clamp(26rem, 45vw, 90rem);
   color: var(--white);
@@ -195,6 +261,17 @@ header {
   font-family: var(--heading-font);
   font-weight: 500;
   z-index: 1;
+}
+
+@media screen and (max-width: 450px) {
+  .hero-text__heading {
+    font-size: 5.5rem;
+  }
+  .hero-text__tagline {
+    font-size: 1rem;
+    margin-top: -1rem;
+    width: 20rem;
+  }
 }
 
 /************************************** End Hero banner ***********************************/
@@ -592,6 +669,11 @@ section:nth-of-type(3) {
   background-color: var(--pink);
   border-radius: 10px;
   padding: 1em;
+  transition: all 0.2s;
+}
+
+.delete-product-from-cart {
+  transform: scale(0.05);
 }
 
 .checkout-cart__img {

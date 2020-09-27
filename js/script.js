@@ -13,6 +13,9 @@ const addProductToCartBtns = document.querySelectorAll(".cartBtn");
 const addProductBtns = document.querySelectorAll(".plus");
 const subtractProductBtns = document.querySelectorAll(".minus");
 const totalCostLabel = document.querySelector("#total-cost");
+const nav = document.querySelector(".nav__links");
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelectorAll(".nav__links a");
 const addedProductsToCart = [];
 
 // Event Listeners
@@ -38,6 +41,18 @@ addProductBtns.forEach((addProductBtn) => {
 });
 subtractProductBtns.forEach((subtractProductBtn) => {
   subtractProductBtn.addEventListener("click", subtractOneMoreproduct);
+});
+
+burger.addEventListener("click", () => {
+  nav.classList.toggle("nav-open");
+  burger.classList.toggle("toggle");
+});
+
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    nav.classList.toggle("nav-open");
+    burger.classList.toggle("toggle");
+  });
 });
 
 // Functions
@@ -108,7 +123,10 @@ function deleteProduct(event) {
   addedProductsToCart[cartBtnIndex].disabled = false;
   addedProductsToCart[cartBtnIndex].dataset.quantity = 1;
   addedProductsToCart.splice(cartBtnIndex, 1);
-  productWrapper.remove();
+  productWrapper.classList.add("delete-product-from-cart");
+  productWrapper.addEventListener("transitionend", () => {
+    productWrapper.remove();
+  });
   // Calculating the total
   addTotalPrice();
   event.stopPropagation();
@@ -210,7 +228,7 @@ const headerObserver = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "-360px" }
+  { rootMargin: "-220px" }
 );
 
 headerObserver.observe(mainContainer);
