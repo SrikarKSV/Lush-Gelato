@@ -14,6 +14,7 @@ const totalCostLabel = document.querySelector("#total-cost");
 const nav = document.querySelector(".nav__links");
 const burger = document.querySelector(".burger");
 const navLinks = document.querySelectorAll(".nav__links a");
+const countdownTimer = document.querySelector(".limited-time__time");
 const addedProductsToCart = [];
 
 // Event Listeners
@@ -207,6 +208,19 @@ function unToggleCheckOutEscape(event) {
   }
 }
 
+// Countdown timer
+const startingMinutes = 59;
+let time = startingMinutes * 60;
+function countDown() {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  countdownTimer.innerHTML = `${minutes}:${seconds}`;
+  time--;
+  time = time < 0 ? 0 : time;
+}
+setInterval(countDown, 1000);
+
 // Animate the images on hover
 // The add to cart button is under an extra div
 function animateImg(e) {
@@ -226,37 +240,6 @@ function animateImage(parent, keyframeName) {
     img.classList.remove(keyframeName);
   });
 }
-
-// Scroll reveal animation
-window.sr = ScrollReveal();
-
-sr.reveal(".animate-left", {
-  origin: "left",
-  duration: 1000,
-  distance: "25rem",
-  delay: 550,
-});
-
-sr.reveal(".animate-right", {
-  origin: "right",
-  duration: 1000,
-  distance: "25rem",
-  delay: 550,
-});
-
-sr.reveal(".animate-top", {
-  origin: "top",
-  duration: 1000,
-  distance: "25rem",
-  delay: 50,
-});
-
-sr.reveal(".animate-bottom", {
-  origin: "bottom",
-  duration: 1000,
-  distance: "25rem",
-  delay: 500,
-});
 
 // Header scroll navbar
 
