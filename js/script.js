@@ -10,8 +10,6 @@ const checkoutWrapper = document.querySelector(".checkout-cart-wrapper");
 const cartProductWrapper = document.querySelector(".cart-products-wrapper");
 const closeCartBtn = document.querySelector(".close-cart");
 const addProductToCartBtns = document.querySelectorAll(".cartBtn");
-const addProductBtns = document.querySelectorAll(".plus");
-const subtractProductBtns = document.querySelectorAll(".minus");
 const totalCostLabel = document.querySelector("#total-cost");
 const nav = document.querySelector(".nav__links");
 const burger = document.querySelector(".burger");
@@ -34,13 +32,6 @@ window.addEventListener("keydown", unToggleCheckOutEscape);
 
 addProductToCartBtns.forEach((addProductToCartBtn) => {
   addProductToCartBtn.addEventListener("click", addToCart);
-});
-
-addProductBtns.forEach((addProductBtn) => {
-  addProductBtn.addEventListener("click", addOneMoreproduct);
-});
-subtractProductBtns.forEach((subtractProductBtn) => {
-  subtractProductBtn.addEventListener("click", subtractOneMoreproduct);
 });
 
 burger.addEventListener("click", () => {
@@ -95,11 +86,10 @@ function addToCart(event) {
     cartProductWrapper.appendChild(htmlFragment);
     // Disabling the button
     const addToCartBtn = event.currentTarget;
-    addToCartBtn.disabled = true;
     addToCartBtn.classList.add("already-added");
     addTotalPrice();
   } else {
-    navigator.vibrate(200, 300, 400, 300, 200);
+    navigator.vibrate(100, 200, 300, 400, 480, 400, 300, 200, 100);
   }
 }
 
@@ -120,7 +110,6 @@ function deleteProduct(event) {
   const productWrapper = event.currentTarget.parentElement.parentElement;
   const cartBtnIndex = getCartBtnIndex(event);
   addedProductsToCart[cartBtnIndex].classList.remove("already-added");
-  addedProductsToCart[cartBtnIndex].disabled = false;
   addedProductsToCart[cartBtnIndex].dataset.quantity = 1;
   addedProductsToCart.splice(cartBtnIndex, 1);
   productWrapper.classList.add("delete-product-from-cart");
@@ -215,6 +204,37 @@ function animateImage(parent, keyframeName) {
     img.classList.remove(keyframeName);
   });
 }
+
+// Scroll reveal animation
+window.sr = ScrollReveal();
+
+sr.reveal(".animate-left", {
+  origin: "left",
+  duration: 1000,
+  distance: "25rem",
+  delay: 550,
+});
+
+sr.reveal(".animate-right", {
+  origin: "right",
+  duration: 1000,
+  distance: "25rem",
+  delay: 550,
+});
+
+sr.reveal(".animate-top", {
+  origin: "top",
+  duration: 1000,
+  distance: "25rem",
+  delay: 50,
+});
+
+sr.reveal(".animate-bottom", {
+  origin: "bottom",
+  duration: 1000,
+  distance: "25rem",
+  delay: 300,
+});
 
 // Header scroll navbar
 
