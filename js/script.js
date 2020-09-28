@@ -48,12 +48,8 @@ navLinks.forEach((navLink) => {
 
 // Functions
 
-// Add to cart
-function addToCart(event) {
-  if (!addedProductsToCart.includes(event.currentTarget)) {
-    addedProductsToCart.push(event.currentTarget);
-    productDetails = event.currentTarget.dataset;
-    htmlString = `
+function createCartItem(productDetails) {
+  const htmlString = `
   <div class="checkout-cart__product" data-producttitle="${productDetails.title}">
         <img src="${productDetails.img}" alt="Mango Zap" class="checkout-cart__img">
         <div class="checkout-cart__product-details">
@@ -67,21 +63,36 @@ function addToCart(event) {
         </div>
         </div>
   `;
-    const htmlFragment = document
-      .createRange()
-      .createContextualFragment(htmlString);
-    // Adding event listeners to buttons
-    const addBtn = htmlFragment.querySelector(".plus");
-    addBtn.addEventListener("click", addOneMoreproduct);
+  const htmlFragment = document
+    .createRange()
+    .createContextualFragment(htmlString);
+  // Adding event listeners to buttons
+  const addBtn = htmlFragment.querySelector(".plus");
+  addBtn.addEventListener("click", addOneMoreproduct);
 
-    const subtractBtn = htmlFragment.querySelector(".minus");
-    subtractBtn.addEventListener("click", subtractOneMoreproduct);
+  const subtractBtn = htmlFragment.querySelector(".minus");
+  subtractBtn.addEventListener("click", subtractOneMoreproduct);
 
-    const deleteBtn = htmlFragment.querySelector(".delete");
-    deleteBtn.addEventListener("click", deleteProduct);
+  const deleteBtn = htmlFragment.querySelector(".delete");
+  deleteBtn.addEventListener("click", deleteProduct);
 
-    const input = htmlFragment.querySelector("#quantity");
-    input.addEventListener("input", addMoreProducts);
+  const input = htmlFragment.querySelector("#quantity");
+  input.addEventListener("input", addMoreProducts);
+
+  return htmlFragment;
+}
+
+// Add to cart
+function addToCart(event) {
+  if (!addedProductsToCart.includes(event.currentTarget)) {
+    addedProductsToCart.push(event.currentTarget);
+    const productDetails = event.currentTarget.dataset;
+
+    const htmlFragment = createCartItem(productDetails);
+    // Pushing to local storage
+    const cartItems = getItemsFromLS();
+    cartItems.push(event.currentTarget.dataset.title);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     cartProductWrapper.appendChild(htmlFragment);
     // Disabling the button
@@ -111,6 +122,17 @@ function deleteProduct(event) {
   const cartBtnIndex = getCartBtnIndex(event);
   addedProductsToCart[cartBtnIndex].classList.remove("already-added");
   addedProductsToCart[cartBtnIndex].dataset.quantity = 1;
+
+  // Deleting from local storage
+  const cartItems = getItemsFromLS();
+  const cartItemIndex = cartItems.indexOf(
+    addedProductsToCart[cartBtnIndex].dataset.title
+  );
+  if (cartItemIndex > -1) {
+    cartItems.splice(cartItemIndex, 1);
+  }
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
   addedProductsToCart.splice(cartBtnIndex, 1);
   productWrapper.classList.add("delete-product-from-cart");
   productWrapper.addEventListener("transitionend", () => {
@@ -252,3 +274,35 @@ const headerObserver = new IntersectionObserver(
 );
 
 headerObserver.observe(mainContainer);
+
+// Getting products from local storage
+function getItemsFromLS() {
+  let cartItems;
+  if (localStorage.getItem("cartItems") === null) {
+    cartItems = [];
+  } else {
+    cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  }
+  return cartItems;
+}
+
+// Loading from local storage
+function getSavedItems() {
+  console.log("Working");
+  const cartItems = getItemsFromLS();
+  cartItems.forEach((cartItem) => {
+    addProductToCartBtns.forEach((cartBtn) => {
+      if (cartBtn.dataset.title === cartItem) {
+        const htmlFragment = createCartItem(cartBtn.dataset);
+
+        cartProductWrapper.appendChild(htmlFragment);
+        // Disabling the button
+        cartBtn.classList.add("already-added");
+        addedProductsToCart.push(cartBtn);
+        addTotalPrice();
+      }
+    });
+  });
+}
+
+getSavedItems();
