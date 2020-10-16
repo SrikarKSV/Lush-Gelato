@@ -1,271 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-        <meta name="description" content="This is a dummy website which delivers ice-creams to your doorstep!!">
-        <meta name="author" content="Srikar KSV">
-        <meta name="keywords" content="ice-cream, dummy, html, css, javascript">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lush Gelato</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat:wght@400;500&family=Poppins&display=swap"
-            rel="stylesheet">
-        <link rel="shortcut icon" href="./img/ice-pop-favicon.png" type="image/x-icon">
-        <link rel="stylesheet" href="./css/main.css">
-    </head>
+<head>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <meta name="description" content="This is a dummy website which delivers ice-creams to your doorstep!!">
+  <meta name="author" content="Srikar KSV">
+  <meta name="keywords" content="ice-cream, dummy, html, css, javascript">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lush Gelato</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Montserrat:wght@400;500&family=Poppins&display=swap"
+    rel="stylesheet">
+  <link rel="shortcut icon" href="./img/ice-pop-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
 
-    <body>
-        <div id="hero">
-            <header>
-                <h1 id="logo"><a href="#" class="logo__link"> Lush Gelato </a></h1>
-                <nav>
-                    <ul class="nav">
-                        <div class="nav__links">
-                            <a href="#main-container" class="nav__item ">
-                                <li class="nav__item--underline">SHOP</li>
-                            </a>
-                            <a href="#contact" class="nav__item">
-                                <li>CONTACT</li>
-                            </a>
-                            <a href="#" class="nav__item">
-                                <li>REGISTER</li>
-                            </a>
-                        </div>
-                        <button href="#" class="nav__item nav__item--cart">
-                            <li><i class="fas fa-shopping-cart"></i></li>
-                        </button>
-                        <div class="burger nav__item">
-                            <span class="line1"></span>
-                            <span class="line2"></span>
-                            <span class="line3"></span>
-                        </div>
-                    </ul>
-                </nav>
-            </header>
-            <section id="hero-text">
-                <h2 class="hero-text__heading">Lush Gelato</h2>
-                <p class="hero-text__tagline">Hand made carefully prepared ice-cream right at your door step</p>
-            </section>
+<body>
+  <div id="hero">
+    <header>
+      <h1 id="logo"><a href="#" class="logo__link"> Lush Gelato </a></h1>
+      <nav>
+        <ul class="nav">
+          <div class="nav__links">
+            <a href="#main-container" class="nav__item ">
+              <li class="nav__item--underline">SHOP</li>
+            </a>
+            <a href="#contact" class="nav__item">
+              <li>CONTACT</li>
+            </a>
+            <a href="#" class="nav__item">
+              <li>REGISTER</li>
+            </a>
+          </div>
+          <button href="#" class="nav__item nav__item--cart">
+            <li><i class="fas fa-shopping-cart"></i></li>
+          </button>
+          <div class="burger nav__item">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <section id="hero-text">
+      <h2 class="hero-text__heading">Lush Gelato</h2>
+      <p class="hero-text__tagline">Hand made carefully prepared ice-cream right at your door step</p>
+    </section>
+  </div>
+  <main id="main-container">
+    <div class="limited-time-wrapper animate-top">
+      <section id="limited-time">
+        <p class="limited-time__side-banner">Limited time</p>
+        <div class="limited-time_content-wraper">
+          <p class="limited-time__text"><span class="limited-time__text--attention">Grab your favourite
+              flavour</span> before time runs
+            out!!
+          </p>
+          <p class="limited-time__time">59:00</p>
         </div>
-        <main id="main-container">
-            <div class="limited-time-wrapper animate-top">
-                <section id="limited-time">
-                    <p class="limited-time__side-banner">Limited time</p>
-                    <div class="limited-time_content-wraper">
-                        <p class="limited-time__text"><span class="limited-time__text--attention">Grab your favourite
-                                flavour</span> before time runs
-                            out!!
-                        </p>
-                        <p class="limited-time__time">59:00</p>
-                    </div>
-                    <div class="limted-time__img-container">
-                        <img src="./img/limited-time.png" alt="" id="limited-time__img">
-                    </div>
-                </section>
-            </div>
-            <section class="special-flavours animate-left">
-                <h3 class="special-flavours__heading">Special flavours</h3>
-                <div class="special-flavours__products-grid">
-                    <div class="special-flavours__products">
-                        <img src="./img/choco_vanilla.webp" alt="Choco vanilla">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Choco vanilla</h4>
-                            <p class="special-flavours__product-price"><span
-                                    class="special-flavours__product--oldprice">$7.99</span> $4.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Choco vanilla" data-price="4.99"
-                                data-img="./img/choco_vanilla.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/double-chocolate.webp" alt="Chocolaty mix">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Chocolaty mix</h4>
-                            <p class="special-flavours__product-price"><span
-                                    class="special-flavours__product--oldprice">$7.99</span> $4.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Chocolaty mix" data-price="4.99"
-                                data-img="./img/double-chocolate.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/butterscotch.webp" alt="Butterscotch">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Butterscotch</h4>
-                            <p class="special-flavours__product-price"><span>$7.99</span> $4.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Butterscotch" data-price="4.99"
-                                data-img="./img/butterscotch.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="featured-products-wrapper">
-                <div class="featured-products animate-right">
-                    <img src="./img/feast-chocolate.webp" alt="Nutty Chocolate mix">
-                    <h4>Feast Chocolate</h4>
-                    <p>Who doesn’t like a Solid surprise! Bite the crunchy chocolate coating into a soft creamy
-                        chocolate delight and finish with a solid chocolate core.
-                        <br>70ml</p>
-                    <button class="add-to-cart-featured cartBtn" data-title="Nutty Chocolate mix" data-price="9.99"
-                        data-img="./img/feast-chocolate.webp" data-quantity=1>Add to cart</button>
-                </div>
-                <div class="featured-products animate-left">
-                    <img src="./img/unicornetto.webp" alt="Unicornetto">
-                    <h4>Uni Cornetto</h4>
-                    <p>Little magic little fantasy! Creamy berry dessert with rich white chocolate disc and magic of
-                        praline sprinklers in a new purple cone!
-                        <br>110ml</p>
-                    <button class="add-to-cart-featured cartBtn" data-title="Unicornetto" data-price="8.99"
-                        data-img="./img/unicornetto.webp" data-quantity=1>Add to cart</button>
-                </div>
-                <div class="featured-products animate-right">
-                    <img src="./img/corenetto-disc.webp" alt="Cornetti disc">
-                    <h4>Cornetto Disc Oreo</h4>
-                    <p>It's a mix made in heaven! Oreo crushed in creamy Vanilla wrapped in our first-ever chocolate
-                        cone topped with a chocolate disc
-                        <br>110ml</p>
-                    <button class="add-to-cart-featured cartBtn" data-title="Cornetti disc" data-price="7.99"
-                        data-img="./img/corenetto-disc.webp" data-quantity=1>Add to cart</button>
-                </div>
-            </section>
-            <section class="special-flavours animate-left">
-                <h3 class="special-flavours__heading">YUMMY STICKS!</h3>
-                <div class="special-flavours__products-grid special-flavours__yummy-sticks">
-                    <div class="special-flavours__products">
-                        <img src="./img/shahi-kulfi.webp" alt="Shahi kulfi" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Shahi kulfi</h4>
-                            <p class="special-flavours__product-price"><span>$9.99</span> $7.49</p>
-                            <button class="add-to-cart cartBtn" data-title="Shahi kulfi" data-price="7.49"
-                                data-img="./img/shahi-kulfi.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/chocobar.webp" alt="Chocobar" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Chocobar</h4>
-                            <p class="special-flavours__product-price"><span>$11.49</span> $4.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Chocobar" data-price="4.99"
-                                data-img="./img/chocobar.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/fruit_n_nut_feast.webp" alt="Feast Fruit & Nut" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Fruit & Nut</h4>
-                            <p class="special-flavours__product-price"><span>$2.99</span> $1.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Fruit & Nut" data-price="1.99"
-                                data-img="./img/fruit_n_nut_feast.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/cloud-bite.webp" alt="Cloud Bite" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Cloud Bite</h4>
-                            <p class="special-flavours__product-price"><span>$4.99</span> $2.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Cloud Bite" data-price="2.99"
-                                data-img="./img/cloud-bite.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/cola-blast.webp" alt="Cola Blast" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Cola Blast</h4>
-                            <p class="special-flavours__product-price"><span>$6.99</span> $0.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Cola Blast" data-price="0.99"
-                                data-img="./img/cola-blast.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/lemon_blast.webp" alt="Lemon Blast" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Lemon Blast</h4>
-                            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Lemon Blast" data-price="1.99"
-                                data-img="./img/lemon_blast.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/orange_mahabar.webp" alt="Orange Masti" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Orange Masti</h4>
-                            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Orange Masti" data-price="1.99"
-                                data-img="./img/orange_mahabar.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                    <div class="special-flavours__products">
-                        <img src="./img/mango_zap.webp" alt="Mango Zap" loading="lazy">
-                        <div class="special-flavour__content-details">
-                            <h4 class="special-flavours__product-name">Mango Zap</h4>
-                            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
-                            <button class="add-to-cart cartBtn" data-title="Mango Zap" data-price="1.99"
-                                data-img="./img/mango_zap.webp" data-quantity=1>Add to cart</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="why-us animate-bottom">
-                <h3 class="special-flavours__heading why-us__heading">Why Lush Gelato?</h3>
-                <div class="why-us__reasons-wrapper">
-                    <div class="why-us__reasons">
-                        <img src="./img/pickup.svg" alt="" loading="lazy">
-                        <p>Safe Delivery</p>
-                    </div>
-                    <div class="why-us__reasons">
-                        <img src="./img/box.svg" alt="" loading="lazy">
-                        <p>Professional packaging</p>
-                    </div>
-                    <div class="why-us__reasons">
-                        <img src="./img/timer.svg" alt="" loading="lazy">
-                        <p>Right on time</p>
-                    </div>
-                </div>
-            </section>
-            <section class="checkout-cart-wrapper">
-                <div class="checkout-cart">
-                    <button class="close-cart"><i class="fas fa-times"></i></button>
-                    <h6 class="special-flavours__heading">Checkout Cart</h6>
-                    <div class="cart-products-wrapper">
+        <div class="limted-time__img-container">
+          <img src="./img/limited-time.png" alt="" id="limited-time__img">
+        </div>
+      </section>
+    </div>
+    <section class="special-flavours animate-left">
+      <h3 class="special-flavours__heading">Special flavours</h3>
+      <div class="special-flavours__products-grid">
+        <div class="special-flavours__products">
+          <img src="./img/choco_vanilla.webp" alt="Choco vanilla">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Choco vanilla</h4>
+            <p class="special-flavours__product-price"><span class="special-flavours__product--oldprice">$7.99</span>
+              $4.99</p>
+            <button class="add-to-cart cartBtn" data-title="Choco vanilla" data-price="4.99"
+              data-img="./img/choco_vanilla.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/double-chocolate.webp" alt="Chocolaty mix">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Chocolaty mix</h4>
+            <p class="special-flavours__product-price"><span class="special-flavours__product--oldprice">$7.99</span>
+              $4.99</p>
+            <button class="add-to-cart cartBtn" data-title="Chocolaty mix" data-price="4.99"
+              data-img="./img/double-chocolate.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/butterscotch.webp" alt="Butterscotch">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Butterscotch</h4>
+            <p class="special-flavours__product-price"><span>$7.99</span> $4.99</p>
+            <button class="add-to-cart cartBtn" data-title="Butterscotch" data-price="4.99"
+              data-img="./img/butterscotch.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="featured-products-wrapper">
+      <div class="featured-products animate-right">
+        <img src="./img/feast-chocolate.webp" alt="Nutty Chocolate mix">
+        <h4>Feast Chocolate</h4>
+        <p>Who doesn’t like a Solid surprise! Bite the crunchy chocolate coating into a soft creamy
+          chocolate delight and finish with a solid chocolate core.
+          <br>70ml</p>
+        <button class="add-to-cart-featured cartBtn" data-title="Nutty Chocolate mix" data-price="9.99"
+          data-img="./img/feast-chocolate.webp" data-quantity=1>Add to cart</button>
+      </div>
+      <div class="featured-products animate-left">
+        <img src="./img/unicornetto.webp" alt="Unicornetto">
+        <h4>Uni Cornetto</h4>
+        <p>Little magic little fantasy! Creamy berry dessert with rich white chocolate disc and magic of
+          praline sprinklers in a new purple cone!
+          <br>110ml</p>
+        <button class="add-to-cart-featured cartBtn" data-title="Unicornetto" data-price="8.99"
+          data-img="./img/unicornetto.webp" data-quantity=1>Add to cart</button>
+      </div>
+      <div class="featured-products animate-right">
+        <img src="./img/corenetto-disc.webp" alt="Cornetti disc">
+        <h4>Cornetto Disc Oreo</h4>
+        <p>It's a mix made in heaven! Oreo crushed in creamy Vanilla wrapped in our first-ever chocolate
+          cone topped with a chocolate disc
+          <br>110ml</p>
+        <button class="add-to-cart-featured cartBtn" data-title="Cornetti disc" data-price="7.99"
+          data-img="./img/corenetto-disc.webp" data-quantity=1>Add to cart</button>
+      </div>
+    </section>
+    <section class="special-flavours animate-left">
+      <h3 class="special-flavours__heading">YUMMY STICKS!</h3>
+      <div class="special-flavours__products-grid special-flavours__yummy-sticks">
+        <div class="special-flavours__products">
+          <img src="./img/shahi-kulfi.webp" alt="Shahi kulfi" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Shahi kulfi</h4>
+            <p class="special-flavours__product-price"><span>$9.99</span> $7.49</p>
+            <button class="add-to-cart cartBtn" data-title="Shahi kulfi" data-price="7.49"
+              data-img="./img/shahi-kulfi.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/chocobar.webp" alt="Chocobar" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Chocobar</h4>
+            <p class="special-flavours__product-price"><span>$11.49</span> $4.99</p>
+            <button class="add-to-cart cartBtn" data-title="Chocobar" data-price="4.99" data-img="./img/chocobar.webp"
+              data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/fruit_n_nut_feast.webp" alt="Feast Fruit & Nut" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Fruit & Nut</h4>
+            <p class="special-flavours__product-price"><span>$2.99</span> $1.99</p>
+            <button class="add-to-cart cartBtn" data-title="Fruit & Nut" data-price="1.99"
+              data-img="./img/fruit_n_nut_feast.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/cloud-bite.webp" alt="Cloud Bite" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Cloud Bite</h4>
+            <p class="special-flavours__product-price"><span>$4.99</span> $2.99</p>
+            <button class="add-to-cart cartBtn" data-title="Cloud Bite" data-price="2.99"
+              data-img="./img/cloud-bite.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/cola-blast.webp" alt="Cola Blast" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Cola Blast</h4>
+            <p class="special-flavours__product-price"><span>$6.99</span> $0.99</p>
+            <button class="add-to-cart cartBtn" data-title="Cola Blast" data-price="0.99"
+              data-img="./img/cola-blast.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/lemon_blast.webp" alt="Lemon Blast" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Lemon Blast</h4>
+            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
+            <button class="add-to-cart cartBtn" data-title="Lemon Blast" data-price="1.99"
+              data-img="./img/lemon_blast.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/orange_mahabar.webp" alt="Orange Masti" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Orange Masti</h4>
+            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
+            <button class="add-to-cart cartBtn" data-title="Orange Masti" data-price="1.99"
+              data-img="./img/orange_mahabar.webp" data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+        <div class="special-flavours__products">
+          <img src="./img/mango_zap.webp" alt="Mango Zap" loading="lazy">
+          <div class="special-flavour__content-details">
+            <h4 class="special-flavours__product-name">Mango Zap</h4>
+            <p class="special-flavours__product-price"><span>$3.99</span> $1.99</p>
+            <button class="add-to-cart cartBtn" data-title="Mango Zap" data-price="1.99" data-img="./img/mango_zap.webp"
+              data-quantity=1>Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="why-us animate-bottom">
+      <h3 class="special-flavours__heading why-us__heading">Why Lush Gelato?</h3>
+      <div class="why-us__reasons-wrapper">
+        <div class="why-us__reasons">
+          <img src="./img/pickup.svg" alt="" loading="lazy">
+          <p>Safe Delivery</p>
+        </div>
+        <div class="why-us__reasons">
+          <img src="./img/box.svg" alt="" loading="lazy">
+          <p>Professional packaging</p>
+        </div>
+        <div class="why-us__reasons">
+          <img src="./img/timer.svg" alt="" loading="lazy">
+          <p>Right on time</p>
+        </div>
+      </div>
+    </section>
+    <section class="checkout-cart-wrapper">
+      <div class="checkout-cart">
+        <button class="close-cart"><i class="fas fa-times"></i></button>
+        <h6 class="special-flavours__heading">Checkout Cart</h6>
+        <div class="cart-products-wrapper">
 
-                    </div>
-                    <div class="buy-wrapper">
-                        <p class="cost-wrapper">Total: $<span id="total-cost">10.99</span></p><button
-                            class="buy-button">Buy</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <div class="company-info">
-                <h5>Lush Gelato</h5>
-                <p class="address">4184 Saint Marys Avenue,<br>
-                    Vernon, New York, <br>
-                    13476, USA</p>
-                <p class="me">Built by Srikar KSV &copy 2020 Lush Gelatino, Inc.</p>
-            </div>
-            <div class="contact" id="contact">
-                <h5>Contact</h5>
-                <div class="contact-links">
-                    <a href="https://twitter.com/SrikarVks" title="Twitter" target="_blank"><i
-                            class="fab fa-twitter icon"></i></a>
-                    <a href="https://github.com/SrikarKSV" title="Github" target="_blank"><i
-                            class="fab fa-github icon"></i></a>
-                    <a href="https://codepen.io/srikarksv" title="Codepen" target="_blank"><i
-                            class="fab fa-codepen"></i></a>
-                    <a href="https://www.instagram.com/srikar_vksblurryface/" title="Instagram" target="_blank"><i
-                            class="fab fa-instagram icon"></i></a>
-                </div>
-            </div>
-        </footer>
+        </div>
+        <div class="buy-wrapper">
+          <p class="cost-wrapper">Total: $<span id="total-cost">0</span></p><button class="buy-button">Buy</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="company-info">
+      <h5>Lush Gelato</h5>
+      <p class="address">4184 Saint Marys Avenue,<br>
+        Vernon, New York, <br>
+        13476, USA</p>
+      <p class="me">Built by Srikar KSV &copy 2020 Lush Gelatino, Inc.</p>
+    </div>
+    <div class="contact" id="contact">
+      <h5>Contact</h5>
+      <div class="contact-links">
+        <a href="https://twitter.com/SrikarVks" title="Twitter" target="_blank"><i class="fab fa-twitter icon"></i></a>
+        <a href="https://github.com/SrikarKSV" title="Github" target="_blank"><i class="fab fa-github icon"></i></a>
+        <a href="https://codepen.io/srikarksv" title="Codepen" target="_blank"><i class="fab fa-codepen"></i></a>
+        <a href="https://www.instagram.com/srikar_vksblurryface/" title="Instagram" target="_blank"><i
+            class="fab fa-instagram icon"></i></a>
+      </div>
+    </div>
+  </footer>
 
 
-        <script src="./js/script.js"></script>
-        <!-- Font awesome cdn -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-            crossorigin="anonymous" />
-    </body>
+  <script src="./js/script.js"></script>
+  <!-- Font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
+</body>
 
 </html>
